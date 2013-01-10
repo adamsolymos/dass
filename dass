@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Delayed Application Starter Script v0.1
+#
+# by Adam Solymos <ady@andsg.com>, 2012.
+#
+# Edit ~/.dass/config to add/remove applications
+#
+
+echo "DASS: Delayed App Starter Script v0.1"
+
+if [ $# -eq 1 ]
+then
+    DELAY=$1
+else
+    DELAY=15
+fi
+
+echo "Waiting for ${DELAY} seconds..."
+sleep $DELAY
+
+USERHOME=$(eval echo ~${USER})
+
+CONFIGFILE="$USERHOME/.dass/config"
+
+if [ -f $CONFIGFILE ]
+then
+
+    # Will ignore empty lines and comment lines (#)
+    cat $CONFIGFILE | grep -v -e "^#.*$" -e "^\s*$" | while read LINE
+    do
+        echo "Run ${LINE}"
+        eval ${LINE} &
+    done
+
+else
+
+    echo "Error: No config file."
+
+fi
+
+echo "DASS: Done."
+
