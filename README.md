@@ -12,7 +12,7 @@ The default delay is 15 seconds but it can be controlled by the first command li
 ```/path/to/dass 10```
 
 Sample config file:
-```
+```bash
 # First app
 my.app -a -b -c
 # Favorite terminal
