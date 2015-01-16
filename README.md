@@ -8,8 +8,9 @@ This is a shockingly simple BASH script for starting applications with a few sec
 Edit your ~/.dass/config file, add some starter command, each into a separate line. Empty lines, and comment lines (beginning with #) will be ignored. Then you need only to add this script to your Startup Applications and this will load the configured apps after a few seconds.
 
 The default delay is 15 seconds but it can be controlled by the first command line argument (as an integer):
-
-```/path/to/dass 10```
+```bash
+/path/to/dass 10
+```
 
 Sample config file:
 ```bash
