@@ -9,7 +9,7 @@ Edit your ~/.dass/config file, add some starter command, each into a separate li
 
 The default delay is 15 seconds but it can be controlled by the first command line argument (as an integer):
 ```bash
-/path/to/dass 10
+$> dass 10
 ```
 
 Sample config file:
